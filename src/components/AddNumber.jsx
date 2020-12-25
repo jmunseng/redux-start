@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 
 export default class AddNumber extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Add number</h1>
-        <input type='button' value='+'></input>
-        <input type='text' value='0'></input>
+    state={size:1}
 
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <h1>Add Number</h1>
+                <input type='button' value="+" onClick={
+                    function() {
+                        this.props.onClick(this.state.size);
+                    }.bind(this)
+                }></input>
+                <input type='text' value={this.state.size} onChange={
+                    function(e){
+                        this.setState({size:Number(e.target.value)})
+                    }.bind(this)
+                }></input>
+
+            </div>
+        )
+    }
 }
