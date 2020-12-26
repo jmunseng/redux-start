@@ -6,8 +6,9 @@ export default class DisplayNumberRoot extends Component {
         return (
             <div>
                 <h1>Add Number Root</h1>
-                <DisplayNumber/>
+                <DisplayNumber unit="kg"/>
             </div>
         )
     }
 }
+ 
